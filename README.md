@@ -114,3 +114,7 @@ DecoratedBox(
     )                
 ```
 </details>
+
+| Sliding Clipped Nav Bar|Sliding Clipped Nav Bar |Sliding Clipped Nav Bar |
+|:---:|:---:|:---:|
+|<img src='https://raw.githubusercontent.com/watery-desert/assets/main/sliding_clipped_nav_bar/demo_recording.gif' width='30'>|||
