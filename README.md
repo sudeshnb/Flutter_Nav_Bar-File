@@ -3,7 +3,7 @@ How to use?
 Add `SlidingClippedNavBar()` to `bottomNavigationBar` property of `Scaffold()` and add `PageView()` to body with `NeverScrollableScrollPhysics()` don't try to upate the seleted index from `onPageChanged` or will see some weird behaviour. You can use `Stack()` or `AnimatedSwitcher()` for custom page transition animation.
 
 <details><summary><strong><h3>Sliding Clipped Nav Bar</h3></strong></summary>
-<p>
+
 
 Do and don't
 + Don't make icon size too big.
@@ -86,5 +86,31 @@ return Scaffold(
      ),
    );
 ```
-</p>
+### How do I change the height?
+  - The height must be constant because the animation is in vertical direction. According to me 60 is perfect. But if you think needs to be reduced then please create an issue with a screenshot. I will see if I can do something.
+### How do I add drop shadow?
+  - Wrap `SlidingClippedNavBar` with `DecoratedBox` or `Container` and pass `BoxDecoration` to decoration property. BoxDecoration takes list of boxShadow there you can pass your drop shadow.
+```dart
+DecoratedBox(
+    decoration: BoxDecoration(
+      boxShadow: [
+        BoxShadow(
+            color: Colors.black.withOpacity(0.2),
+            offset: Offset(0, 4),
+            blurRadius: 8.0)
+      ],
+    ),
+    child: SlidingClippedNavBar()
+)
+```
+### How do I change the corner radius of the navigation bar?
+  - Wrap `SlidingClippedNavBar` with `ClipRRect` and pass `BorderRadius` to borderRadius property.
+```dart
+  ClipRRect(
+      borderRadius: const BorderRadius.vertical(
+        top: Radius.circular(16),
+      ),
+      child: SlidingClippedNavBar(
+    )                
+```
 </details>
