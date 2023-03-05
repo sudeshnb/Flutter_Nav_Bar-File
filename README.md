@@ -1,4 +1,4 @@
-# Flutter Nav Bars 
+# Flutter Bottom Navigation Bar
 How to use?
 
 Add `SlidingClippedNavBar()` or `WaterDropNavBar()` to `bottomNavigationBar` property of `Scaffold()` and add `PageView()` to body with `NeverScrollableScrollPhysics()` don't try to upate the seleted index from `onPageChanged` or will see some weird behaviour. You can use `Stack()` or `AnimatedSwitcher()` for custom page transition animation.
