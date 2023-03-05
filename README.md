@@ -1,5 +1,5 @@
 # Flutter Bottom Navigation Bar
-How to use?
+#### How to use?
 
 Add `SlidingClippedNavBar()` or `WaterDropNavBar()` to `bottomNavigationBar` property of `Scaffold()` and add `PageView()` to body with `NeverScrollableScrollPhysics()` don't try to upate the seleted index from `onPageChanged` or will see some weird behaviour. You can use `Stack()` or `AnimatedSwitcher()` for custom page transition animation.
 
@@ -131,7 +131,9 @@ Short example
 ```
 ### ❗️ Issues ❗️
 + Android
-Some android phones might have black navigation bar, this looks ugly. It's recommended to wrap Scaffold with `AnnotatedRegion<SystemUiOverlayStyle>` to change that black navigation bar color to `WaterDropNavBar` backgroundColor. Check the example app. Like this 👇
+  
+  - Some android phones might have black navigation bar, this looks ugly. It's recommended to wrap Scaffold with `AnnotatedRegion<SystemUiOverlayStyle>` to change that black navigation bar color to `WaterDropNavBar` backgroundColor. Check the example app. Like this 👇
+  
 ```dart
 return AnnotatedRegion<SystemUiOverlayStyle>(
      value: const SystemUiOverlayStyle(
@@ -145,17 +147,18 @@ return AnnotatedRegion<SystemUiOverlayStyle>(
 );
 ```
 You can additionally provide some bottomPadding to add padding at the bottom of the bar, I think 8 is enough.
+  
 + iOS
-iPhones without swipe home gesture might have such issue where icons are pushed to the bottom. Provide some bottomPadding. I added 8 padding here.
+  
+  - iPhones without swipe home gesture might have such issue where icons are pushed to the bottom. Provide some bottomPadding. I added 8 padding here.
 Now you might ask how do you know which phone is using swipe home gesture?
-
-Well, you can check bottom padding (using MediaQuery.of(context).padding.bottom) and if it's less than 34 or something then provide some bottom padding. Definitely try running different simulators and see.
+  -  Well, you can check bottom padding (using MediaQuery.of(context).padding.bottom) and if it's less than 34 or something then provide some bottom padding. Definitely try running different simulators and see.
 
 </details>
 
-### How do I change the height?
++ #### How do I change the height?
   - The height must be constant because the animation is in vertical direction. According to me 60 is perfect. But if you think needs to be reduced then please create an issue with a screenshot. I will see if I can do something.
-### How do I add drop shadow?
++ #### How do I add drop shadow?
   - Wrap `SlidingClippedNavBar` or `WaterDropNavBar()` with `DecoratedBox` or `Container` and pass `BoxDecoration` to decoration property. BoxDecoration takes list of boxShadow there you can pass your drop shadow.
 ```dart
 DecoratedBox(
@@ -170,7 +173,7 @@ DecoratedBox(
     child: SlidingClippedNavBar()
 )
 ```
-### How do I change the corner radius of the navigation bar?
++ #### How do I change the corner radius of the navigation bar?
   - Wrap `SlidingClippedNavBar` with `ClipRRect` and pass `BorderRadius` to borderRadius property.
 ```dart
   ClipRRect(
